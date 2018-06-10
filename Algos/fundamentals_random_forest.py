@@ -9,7 +9,7 @@ from zipline.finance import commission, slippage, execution
 
 
 def initialize(context):
-	context.i = 99
+	context.i = int(input("Start index?:  "))
 
 	# Explicitly set the commission/slippage to the "old" value until we can
 	# rebuild example data.
