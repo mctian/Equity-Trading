@@ -47,6 +47,9 @@ def run(context, data):
 									targetLength = 3, sector = sector, percentileTarget = 90, percentileAvoid = 10, verbose = True)
 		portfolio = makePortfolio(context.i, randForest)
 		for stock in portfolio:
-			order_target_percent(asset = symbol(stock), target = 1/len(portfolio), style = execution.MarketOrder())
+			try:
+				order_target_percent(asset = symbol(stock), target = 1/len(portfolio), style = execution.MarketOrder())
+			except:
+				pass
 	context.i -= 1
 	return
